@@ -94,16 +94,13 @@ end
 
 def player_stats(player)
   game_hash.each do |location, team_data|
-  game_hash[location].each do |data, name|
-     data == :players
-    game_hash[location][:players].each do |name, stats|
-   game_hash[location][data][name] == (player)
-      return game_hash[location][data][name][stats]
-    
-  end 
-end 
-end 
-end 
+        team_data[:players].each do |name, stats|
+           if name == player
+            return stats
+           end 
+         end 
+       end 
+end
 
 def big_shoe_rebounds
 player_name = ""
